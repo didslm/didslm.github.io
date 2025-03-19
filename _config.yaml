@@ -1,7 +1,7 @@
 title: "Moments That Matter"
 description: "A minimalist theme inspired by a modern, clean design."
-baseurl: "" # e.g. /blog if your site is at example.com/blog
-url: ""      # e.g. https://example.com
+url: "https://didslm.github.io"
+baseurl: "/my-blog"
 theme: null  # We are creating our own theme in this folder
 
 markdown: kramdown
