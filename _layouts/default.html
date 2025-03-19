@@ -5,12 +5,17 @@
     {% include head.html %}
 </head>
 
-<body>
-    <div class="site-container">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div class="site-container min-h-screen flex flex-col">
+        <!-- Header -->
         {% include header.html %}
-        <main class="site-main">
+
+        <!-- Main Content -->
+        <main class="site-main flex-grow">
             {{ content }}
         </main>
+
+        <!-- Footer -->
         {% include footer.html %}
     </div>
 </body>
