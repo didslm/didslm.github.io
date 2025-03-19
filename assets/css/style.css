@@ -1,4 +1,2 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhaWx3aW5kLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJzdHlsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAdGFpbHdpbmQgYmFzZTtcbkB0YWlsd2luZCBjb21wb25lbnRzO1xuQHRhaWx3aW5kIHV0aWxpdGllczsiXX0= */
+/*! tailwindcss v4.0.14 | MIT License | https://tailwindcss.com */
+.contents{display:contents}.flex{display:flex}.items-center{align-items:center}.justify-between{justify-content:space-between}.border-b{border-bottom-style:var(--tw-border-style);border-bottom-width:1px}.transition-colors{transition-property:color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to;transition-timing-function:var(--tw-ease,ease);transition-duration:var(--tw-duration,0s)}.duration-300{--tw-duration:.3s;transition-duration:.3s}@property --tw-border-style{syntax:"*";inherits:false;initial-value:solid}@property --tw-duration{syntax:"*";inherits:false}
