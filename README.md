@@ -1,8 +1,9 @@
 ---
-layout: homepage
-title: Welcome
-subtitle: A clean, silk‑inspired site
-overlay_image: /assets/images/hero.jpg
+layout: home
+title: Home
 ---
 
-Hello 👋 I’m Diar — welcome to my new site.
+<!--
+  This file just tells Jekyll to use `home.html` for the homepage.
+  The homepage layout in `_layouts/home.html` handles the rest.
+-->

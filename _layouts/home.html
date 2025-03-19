@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<section class="featured-post">
+    <!-- If you have a featured post or a hero section, you can hardcode or dynamically pull it here. -->
+    <div class="featured-image">
+        <img src="{{ '/assets/images/example-feature.jpg' | relative_url }}" alt="Featured">
+    </div>
+    <div class="featured-content">
+        <h2>Moments That Matter</h2>
+        <p>We cultivate new and perceptive explorations into how people create, meditate, and design unforgettable
+            moments.</p>
+        <a href="#" class="btn">Read more</a>
+    </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="post-list">
+    {% for post in site.posts %}
+    <article class="post-item">
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="post-meta">
+            Posted on {{ post.date | date: "%B %d, %Y" }}
+        </p>
+        <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        <a class="readmore" href="{{ post.url | relative_url }}">Read more</a>
+    </article>
+    {% endfor %}
+</section>

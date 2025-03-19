@@ -1,6 +1,13 @@
-title: Your Name
-description: A clean, silk‑inspired personal site
-remote_theme: yaoyao-liu/minimal-light   # Minimal Light is simple & elegant&#8203;:contentReference[oaicite:0]{index=0}
-font: "Sans Serif"                       # Switch to a modern sans‑serif base
-enable_footnote: false
-auto_dark_mode: false
+title: "Moments That Matter"
+description: "A minimalist theme inspired by a modern, clean design."
+baseurl: "" # e.g. /blog if your site is at example.com/blog
+url: ""      # e.g. https://example.com
+theme: null  # We are creating our own theme in this folder
+
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/
+
+# If you want to generate categories/tags, you can add config here:
+# plugins:
+#   - jekyll-feed
+#   - jekyll-seo-tag
