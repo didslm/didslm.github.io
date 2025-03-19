@@ -2,6 +2,7 @@
 module.exports = {
     content: [
         "./**/*.{html,md,js}", // adjust these paths if needed
+        "./*.{html,md,js}"
     ],
     theme: {
         extend: {},

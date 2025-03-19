@@ -1,3 +1,37 @@
 <footer class="site-footer">
     <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
 </footer>
+<script>
+    // Simple dark-mode toggle: toggles the .dark class on the <html> element.
+    const htmlEl = document.documentElement;
+    const toggleBtn = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+    // Load user preference from localStorage (if any)
+    if (localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        htmlEl.classList.add('dark');
+        darkIcon.classList.remove('hidden');
+        lightIcon.classList.add('hidden');
+    } else {
+        htmlEl.classList.remove('dark');
+        darkIcon.classList.add('hidden');
+        lightIcon.classList.remove('hidden');
+    }
+
+    // Toggle theme and icon on click
+    toggleBtn.addEventListener('click', () => {
+        if (htmlEl.classList.contains('dark')) {
+            htmlEl.classList.remove('dark');
+            localStorage.setItem('color-theme', 'light');
+            darkIcon.classList.add('hidden');
+            lightIcon.classList.remove('hidden');
+        } else {
+            htmlEl.classList.add('dark');
+            localStorage.setItem('color-theme', 'dark');
+            darkIcon.classList.remove('hidden');
+            lightIcon.classList.add('hidden');
+        }
+    });
+</script>

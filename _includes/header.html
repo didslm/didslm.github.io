@@ -1,12 +1,49 @@
-<header class="site-header flex justify-between items-center p-4 bg-gray-100 border-b border-gray-200">
-    <div class="header-logo">
-        <a href="{{ '/' | relative_url }}" class="text-2xl font-bold text-gray-800 font-roboto">{{ site.title }}</a>
+<header x-data="{ mobileOpen: false }"
+    class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-md transition-colors duration-300">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+        <!-- Logo / Site Title -->
+        <a href="{{ '/' | relative_url }}"
+            class="text-2xl font-bold text-gray-900 dark:text-white font-roboto hover:text-green-500 dark:hover:text-green-400 transition-colors duration-300">
+            {{ site.title }}
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button @click="mobileOpen = !mobileOpen"
+            class="md:hidden text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+            <!-- Hamburger icon -->
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        <!-- Navigation & Dark Mode Toggle -->
+        <div class="flex items-center space-x-4">
+            <nav :class="{'block': mobileOpen, 'hidden': !mobileOpen}"
+                class="absolute md:relative top-16 left-0 md:top-auto md:left-auto w-full md:w-auto bg-white dark:bg-gray-900 md:bg-transparent md:dark:bg-transparent md:block border-b md:border-none dark:border-gray-700">
+                <ul class="md:flex md:space-x-6 px-6 py-4 md:py-0 md:px-0">
+                    <li>
+                        <a href="{{ '/' | relative_url }}"
+                            class="block text-gray-700 dark:text-gray-200 hover:text-green-500 dark:hover:text-green-400 transition-colors duration-300 font-merriweather">
+                            Home
+                        </a>
+                    </li>
+                    <!-- Add more nav items here if needed -->
+                </ul>
+            </nav>
+
+            <!-- Dark Mode Toggle Button -->
+            <button id="theme-toggle"
+                class="p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                <!-- Example icon: moon for dark mode, sun for light mode -->
+                <svg id="theme-toggle-dark-icon" class="h-5 w-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                        d="M17.293 13.293l1.414 1.414L14 19.414V20h-1.586l-1.414-1.414 4.707-4.707zM7 14.5A5.5 5.5 0 0112.5 9h.5a5.5 5.5 0 010 11h-.5A5.5 5.5 0 017 14.5z" />
+                </svg>
+                <svg id="theme-toggle-light-icon" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                        d="M10 2a.75.75 0 01.75.75V4a.75.75 0 01-1.5 0V2.75A.75.75 0 0110 2zm5.657 3.03a.75.75 0 010 1.06l-1.06 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zM10 16a.75.75 0 01.75.75V18a.75.75 0 01-1.5 0v-1.25A.75.75 0 0110 16zm-5.657-3.03a.75.75 0 011.06 0l1.06 1.06a.75.75 0 11-1.06 1.06L3.283 14.03a.75.75 0 010-1.06zM2 10a.75.75 0 01.75-.75H4a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm13.25.75H18a.75.75 0 010 1.5h-1.75a.75.75 0 010-1.5zm-7.22 4.97a.75.75 0 00-1.06 0l-1.06 1.06a.75.75 0 101.06 1.06l1.06-1.06a.75.75 0 000-1.06zM14.03 3.283a.75.75 0 011.06 0l1.06 1.06a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06z" />
+                </svg>
+            </button>
+        </div>
     </div>
-    <nav class="site-nav">
-        <ul class="flex space-x-4">
-            <li><a href="{{ '/' | relative_url }}"
-                    class="text-gray-600 hover:text-green-500 transition-colors duration-300 font-merriweather">Home</a>
-            </li>
-        </ul>
-    </nav>
 </header>
