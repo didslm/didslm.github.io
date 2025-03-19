@@ -20,10 +20,10 @@
   "homepage": "https://github.com/didslm/didslm.github.io#readme",
   "devDependencies": {
     "@tailwindcss/cli": "^4.0.14",
-    "@tailwindcss/postcss": "^4.0.14",
+    "@tailwindcss/postcss": "^4.0.0",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
     "postcss-cli": "^9.1.0",
-    "tailwindcss": "^4.0.14"
+    "tailwindcss": "^4.0.0"
   }
 }
