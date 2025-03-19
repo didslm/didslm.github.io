@@ -8,6 +8,6 @@ markdown: kramdown
 permalink: /:categories/:year/:month/:day/:title/
 
 # If you want to generate categories/tags, you can add config here:
-# plugins:
-#   - jekyll-feed
-#   - jekyll-seo-tag
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
