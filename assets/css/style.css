@@ -1,18 +1,28 @@
-$accent-color: #f76707;
-/* A nice orange accent */
-$text-color: #333;
-$bg-color: #fff;
-$max-width: 700px;
+:root {
+    --accent-color: #8ee53f;
+    --accent-hover: #7ad837;
+    --text-color: #333;
+    --bg-color: #fff;
+    --max-width: 700px;
+    --header-padding: 1rem;
+    --transition-speed: 0.3s;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: $text-color;
-    background-color: $bg-color;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
 }
 
-/* Container */
 .site-container {
     margin: 0 auto;
     max-width: 1100px;
@@ -24,14 +34,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba($text-color, 0.1);
+    padding: var(--header-padding) 0;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.1);
 }
 
 .header-logo a {
     font-size: 1.5rem;
     text-decoration: none;
-    color: $text-color;
+    color: var(--text-color);
     font-weight: bold;
 }
 
@@ -48,13 +58,13 @@ body {
 
 .site-nav a {
     text-decoration: none;
-    color: $text-color;
+    color: var(--text-color);
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed) ease;
 }
 
 .site-nav a:hover {
-    color: $accent-color;
+    color: var(--accent-color);
 }
 
 /* Featured Section */
@@ -62,19 +72,21 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 2rem;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .featured-image img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    border: 4px solid $accent-color;
-    border-radius: 4px;
-    flex: 1 1 400px;
+    display: block;
 }
 
 .featured-content {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
     flex: 1 1 300px;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,24 +99,28 @@ body {
 
 .featured-content p {
     margin-bottom: 1rem;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 .featured-content .btn {
-    background-color: $accent-color;
+    background-color: var(--accent-color);
     color: #fff;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     border-radius: 4px;
     font-weight: 600;
     display: inline-block;
-    width: fit-content;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.featured-content .btn:hover {
+    background-color: var(--accent-hover);
 }
 
 /* Divider */
 .section-divider {
     border: none;
-    border-top: 1px solid rgba($text-color, 0.1);
+    border-top: 1px solid rgba(51, 51, 51, 0.1);
     margin: 2rem 0;
 }
 
@@ -115,29 +131,45 @@ body {
     gap: 2rem;
 }
 
+.post-item {
+    padding: 1.5rem;
+    border: 1px solid rgba(51, 51, 51, 0.1);
+    border-radius: 4px;
+    transition: box-shadow var(--transition-speed) ease;
+}
+
+.post-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 .post-item h3 {
     margin-top: 0;
 }
 
-.post-item .post-meta {
+.post-meta {
     font-size: 0.9rem;
-    color: rgba($text-color, 0.6);
+    color: rgba(51, 51, 51, 0.6);
     margin-bottom: 0.5rem;
 }
 
-.post-item .excerpt {
-    margin: 0.5rem 0 1rem 0;
+.excerpt {
+    margin: 0.5rem 0 1rem;
 }
 
 .readmore {
-    color: $accent-color;
+    color: var(--accent-color);
     text-decoration: none;
     font-weight: 500;
+    transition: color var(--transition-speed) ease;
+}
+
+.readmore:hover {
+    color: var(--accent-hover);
 }
 
 /* Single Post */
 .post-page {
-    max-width: $max-width;
+    max-width: var(--max-width);
     margin: 0 auto;
     padding: 2rem 0;
 }
@@ -148,21 +180,21 @@ body {
 
 .post-header .post-meta {
     font-size: 0.9rem;
-    color: rgba($text-color, 0.6);
+    color: rgba(51, 51, 51, 0.6);
     margin-bottom: 2rem;
 }
 
 .post-content p {
-    line-height: 1.7;
     margin-bottom: 1.25rem;
+    line-height: 1.8;
 }
 
 /* Footer */
 .site-footer {
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid rgba($text-color, 0.1);
+    border-top: 1px solid rgba(51, 51, 51, 0.1);
     text-align: center;
     font-size: 0.9rem;
-    color: rgba($text-color, 0.6);
+    color: rgba(51, 51, 51, 0.6);
 }
