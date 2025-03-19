@@ -2,29 +2,61 @@
 layout: default
 ---
 
-<section class="featured-post">
-    <div class="featured-image">
-        <img src="{{ '/assets/images/example-feature.jpg' | relative_url }}" alt="Featured">
-    </div>
-    <div class="featured-content">
-        <h2>Moments That Matter</h2>
-        <p>We cultivate new and perceptive explorations into how people create, meditate, and design unforgettable
-            moments.</p>
-        <a href="#" class="btn">Read more</a>
+<!-- Featured Section -->
+<section class="featured-post bg-gray-50 dark:bg-gray-800 py-10 px-4 md:px-8">
+    <div class="container mx-auto flex flex-col md:flex-row items-center md:space-x-8">
+        <!-- Featured Image -->
+        <div class="featured-image md:w-1/2">
+            <img src="{{ '/assets/images/example-feature.jpg' | relative_url }}" alt="Featured"
+                class="w-full h-auto rounded-lg shadow-md" />
+        </div>
+        <!-- Featured Content -->
+        <div class="featured-content md:w-1/2 mt-6 md:mt-0">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+                Moments That Matter
+            </h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                We cultivate new and perceptive explorations into how people
+                create, meditate, and design unforgettable moments.
+            </p>
+            <a href="#"
+                class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-md shadow-sm transition-colors duration-300">
+                Read more
+            </a>
+        </div>
     </div>
 </section>
 
-<hr class="section-divider" />
+<hr class="section-divider my-10 border-gray-200 dark:border-gray-700" />
 
-<section class="post-list">
-    {% for post in site.posts %}
-    <article class="post-item">
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p class="post-meta">
-            Posted on {{ post.date | date: "%B %d, %Y" }}
-        </p>
-        <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-        <a class="readmore" href="{{ post.url | relative_url }}">Read more</a>
-    </article>
-    {% endfor %}
+<!-- Post List Section -->
+<section class="post-list container mx-auto px-4 md:px-8 pb-10">
+    <!-- Responsive grid: 1 column on mobile, 2 on medium, 3 on large screens -->
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {% for post in site.posts %}
+        <article
+            class="post-item border border-gray-200 dark:border-gray-700 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white dark:bg-gray-900">
+            <!-- Post Title -->
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
+                <a href="{{ post.url | relative_url }}"
+                    class="hover:text-green-500 dark:hover:text-green-400 transition-colors duration-300">
+                    {{ post.title }}
+                </a>
+            </h3>
+            <!-- Post Meta (Date, etc.) -->
+            <p class="post-meta text-sm text-gray-500 dark:text-gray-400 mb-4">
+                Posted on {{ post.date | date: "%B %d, %Y" }}
+            </p>
+            <!-- Post Excerpt -->
+            <p class="excerpt text-gray-600 dark:text-gray-300 mb-4">
+                {{ post.excerpt | strip_html | truncatewords: 30 }}
+            </p>
+            <!-- Read More Link -->
+            <a class="readmore text-green-500 hover:text-green-600 dark:hover:text-green-400 font-semibold transition-colors duration-300"
+                href="{{ post.url | relative_url }}">
+                Read more
+            </a>
+        </article>
+        {% endfor %}
+    </div>
 </section>
